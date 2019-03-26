@@ -53,12 +53,12 @@ As usual, you shouldn't feel beholden to how the definition is
 introduced in the skeleton code below.
 .....................................................................*)
 
-let remember =
-  let message = ref "" in
-    let temp = !message in 
-    fun x -> 
-      message := x ;
-      temp ;;
+let remember : string -> string =
+  let mem = ref "" in
+    fun (s : string) -> 
+    let v = !mem in
+      mem := s;
+      v ;;
 
 
 (*====================================================================
